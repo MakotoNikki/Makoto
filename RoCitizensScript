@@ -1,0 +1,5 @@
+getrenv().shared.Data.PerkData = {
+                ["CatalogAccess"] = true, 
+                ["CustomizeTool"] = true, 
+                ["StreetRacer"] = true
+            }

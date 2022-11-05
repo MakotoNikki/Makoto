@@ -1,0 +1,254 @@
+-- init
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local venyx = library.new("Makoto's test", 5013109572)
+
+-- themes
+local themes = {
+	Background = Color3.fromRGB(24, 24, 24),
+	Glow = Color3.fromRGB(0, 0, 0),
+	Accent = Color3.fromRGB(10, 10, 10),
+	LightContrast = Color3.fromRGB(20, 20, 20),
+	DarkContrast = Color3.fromRGB(14, 14, 14),  
+	TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+-- first page
+local ui = game:GetService("CoreGui"):FindFirstChild("Makoto's test")
+local page = venyx:addPage("Page 1", 5012544693)
+local section1 = page:addSection("Section 1")
+local section2 = page:addSection("Section 2")
+local page3 = venyx:addPage("Teleports", 5012544693)
+local section31 = page3:addSection("Teleport to")
+local page2 = venyx:addPage("Settings", 5012544693)
+local section21 = page2:addSection("Section 1")
+local section22 = page2:addSection("Section 2")
+local theme = venyx:addPage("Theme", 5012544693)
+local colors = theme:addSection("Colors")
+
+
+--first page test
+section1:addTextbox("Notification", "Default", function(value, focusLost)
+	print("Input", value)
+
+	if focusLost then
+		venyx:Notify("Title", value)
+	end
+end)
+section2:addButton("Rename houses", function()
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium1"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium2"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium3"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium4"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium5"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium6"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium7"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium8"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium9"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium10"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium11"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium12"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium13"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium14"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium15"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium16"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium17"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium18"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium19"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium20"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium21"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium22"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium23"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium24"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium25"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium26"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium27"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium28"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium29"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium30"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium31"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium32"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium33"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium34"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium35"
+    game:GetService("Workspace").Property.Plots["Medium Lot"].Name = "Medium36"
+end)
+Houses = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+Plot ={"Medium1", "Medium2", "Medium3", "Medium4", "Medium5", "Medium6", "Medium7", "Medium8", "Medium9", "Medium10", "Medium11", "Medium12", "Medium13", "Medium14", "Medium15", "Medium16", "Medium17", "Medium18", "Medium19", "Medium20", "Medium21", "Medium22", "Medium23", "Medium24", "Medium25", "Medium26", "Medium27", "Medium28", "Medium29", "Medium30", "Medium31", "Medium32", "Medium33", "Medium34", "Medium35", "Medium36"}
+text = ""
+text2 = ""
+section2:addDropdown("House #", Houses, function(text)
+    MF = text
+end)
+section2:addDropdown("Plot #", Plot, function(text2)
+    MF2 = text2
+end)
+section2:addButton("Spawn", function()
+    print(MF, MF2)
+    if MF2 == "Medium1" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium1"]
+    end
+    if MF2 == "Medium2" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium2"]
+    end
+    if MF2 == "Medium3" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium3"]
+    end
+    if MF2 == "Medium4" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium4"]
+    end
+    if MF2 == "Medium5" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium5"]
+    end
+    if MF2 == "Medium6" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium6"]
+    end
+    if MF2 == "Medium7" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium7"]
+    end
+    if MF2 == "Medium8" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium8"]
+    end
+    if MF2 == "Medium9" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium9"]
+    end
+    if MF2 == "Medium10" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium10"]
+    end
+    if MF2 == "Medium11" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium11"]
+    end
+    if MF2 == "Medium12" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium12"]
+    end
+    if MF2 == "Medium13" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium13"]
+    end
+    if MF2 == "Medium14" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium14"]
+    end
+    if MF2 == "Medium15" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium15"]
+    end
+    if MF2 == "Medium16" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium16"]
+    end
+    if MF2 == "Medium17" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium17"]
+    end
+    if MF2 == "Medium18" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium18"]
+    end
+    if MF2 == "Medium19" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium19"]
+    end
+    if MF2 == "Medium20" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium20"]
+    end
+    if MF2 == "Medium21" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium21"]
+    end
+    if MF2 == "Medium22" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium22"]
+    end
+    if MF2 == "Medium23" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium23"]
+    end
+    if MF2 == "Medium24" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium24"]
+    end
+    if MF2 == "Medium25" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium25"]
+    end
+    if MF2 == "Medium26" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium26"]
+    end
+    if MF2 == "Medium27" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium27"]
+    end
+    if MF2 == "Medium28" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium28"]
+    end
+    if MF2 == "Medium29" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium29"]
+    end
+    if MF2 == "Medium30" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium30"]
+    end
+    if MF2 == "Medium31" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium31"]
+    end
+    if MF2 == "Medium32" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium32"]
+    end
+    if MF2 == "Medium33" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium33"]
+    end
+    if MF2 == "Medium34" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium34"]
+    end
+    if MF2 == "Medium35" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium35"]
+    end
+    if MF2 == "Medium36" then
+        MF3 = game:GetService("Workspace").Property.Plots["Medium36"]
+    end
+    local Event = game:GetService("ReplicatedStorage").Relays.House.ImportHouse
+    Event:InvokeServer(MF3, MF)
+end)
+
+
+--teleports
+section31:addButton("Bank", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5170.35547, 6.33333826, 5239.99072, -0.999399364, 5.45751266e-09, -0.0346547477, 5.64521674e-09, 1, -5.31855804e-09, 0.0346547477, -5.51099699e-09, -0.999399364)
+end)
+section31:addButton("The Palms", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5478.36621, 6.33335972, 5862.98975, 0.00526557351, -3.70439963e-08, 0.999986112, 1.12448917e-09, 1, 3.70385891e-08, -0.999986112, 9.29444188e-10, 0.00526557351)
+end)
+section31:addButton("Supertmart", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4270.2251, 6.33333826, 4682.36133, -0.0048756809, -2.54865888e-08, -0.999988139, -4.80717954e-09, 1, -2.54634536e-08, 0.999988139, 4.6829709e-09, -0.0048756809)
+end)
+section31:addButton("Clothes shop", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5063.18604, 6.33333635, 4447.80273, -0.670863092, 2.37003706e-09, 0.741581202, 2.88037239e-09, 1, -5.90227311e-10, -0.741581202, 1.74006831e-09, -0.670863092)
+end)
+section31:addButton("Houses", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2348.50977, 4.89437342, 3901.49048, 0.0570807904, 6.63851507e-09, 0.998369575, -9.44222367e-10, 1, -6.5953718e-09, -0.998369575, -5.66213854e-10, 0.0570807904)
+end)
+section31:addButton("Hill houses", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2253.93262, 148.985596, 1290.17371, -0.12279664, -8.92157672e-08, 0.992431879, 8.03598343e-09, 1, 9.08904241e-08, -0.992431879, 1.91362055e-08, -0.12279664)
+end)
+section31:addButton("Sea Houses", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4415.51611, 9.42562199, -56.443985, 0.992627025, -8.10213123e-08, 0.121208765, 7.34299093e-08, 1, 6.70974387e-08, -0.121208765, -5.77023798e-08, 0.992627025)
+end)
+section31:addButton("Secret cave", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(246.676117, 88.123909, 494.159637, 0.134994179, 4.68715164e-08, 0.990846395, -8.22188007e-09, 1, -4.61843648e-08, -0.990846395, -1.91200034e-09, 0.134994179)
+end)
+section31:addButton("Car Upgrade", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3934.40576, 5.83877087, 5617.23584, -0.999997973, 3.87174666e-08, -0.00201810896, 3.88624777e-08, 1, -7.18160393e-08, 0.00201810896, -7.18943198e-08, -0.999997973)
+end)
+section31:addButton("Airport", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1871.26257, 5.73361158, 5458.31738, -0.0973262042, -8.08344964e-08, -0.99525255, -7.06637806e-08, 1, -7.43098454e-08, 0.99525255, 6.30960102e-08, -0.0973262042)
+end)
+section31:addButton("Apartaments", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5293.48975, 6.33333778, 4830.38672, 0.101444371, 8.78751152e-08, 0.994841218, 1.99137045e-08, 1, -9.03614037e-08, -0.994841218, 2.89776292e-08, 0.101444371)
+end)
+section31:addButton("Police Station", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5425.1333, 6.33333969, 4968.14111, -0.991456985, -1.98211811e-08, 0.13043426, -1.47240646e-08, 1, 4.00424334e-08, -0.13043426, 3.77798273e-08, -0.991456985)
+end)
+--settings
+section21:addKeybind("Toggle Keybind", Enum.KeyCode.RightShift, function()
+	print("Activated Keybind")
+	venyx:toggle()
+end, function()
+	print("Changed Keybind")
+end)
+section21:addButton("Destroy GUI", function()
+    ui:Destroy()
+
+end)
+
+--themes
+for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
+	colors:addColorPicker(theme, color, function(color3)
+		venyx:setTheme(theme, color3)
+	end)
+end

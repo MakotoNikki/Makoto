@@ -1,0 +1,125 @@
+-- init
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local venyx = library.new("Makoto's test", 5013109572)
+
+-- themes
+local themes = {
+	Background = Color3.fromRGB(24, 24, 24),
+	Glow = Color3.fromRGB(0, 0, 0),
+	Accent = Color3.fromRGB(10, 10, 10),
+	LightContrast = Color3.fromRGB(20, 20, 20),
+	DarkContrast = Color3.fromRGB(14, 14, 14),  
+	TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+-- first page
+local ui = game:GetService("CoreGui"):FindFirstChild("Makoto's test")
+local page = venyx:addPage("Page 1", 5012544693)
+local section1 = page:addSection("Section 1")
+local page3 = venyx:addPage("Item Equip", 5012544693)
+local section31 = page3:addSection("Item equip")
+local page2 = venyx:addPage("Settings", 5012544693)
+local section21 = page2:addSection("Settings")
+
+section21:addButton("Destroy GUI", function()
+    ui:Destroy()
+	GSS = 0
+	BSS = 0
+	BSV = 0
+	BSG = 0
+end)
+
+section21:addKeybind("Toggle Keybind", Enum.KeyCode.RightShift, function()
+	print("Activated Keybind")
+	venyx:toggle()
+end, function()
+	print("Changed Keybind")
+end)
+section1:addTextbox("Teleport to:", "Nickname", function(value, focusLost)
+	print("Input", value)
+
+	if focusLost then
+	    GSS = value
+	end
+end)
+section1:addKeybind("Teleport Keybind", Enum.KeyCode.Z, function()
+	print("Activated Keybind")
+	local plr1 = game.Players.LocalPlayer.Character
+	local plr2 = game.Workspace:FindFirstChild(GSS)
+	plr1.HumanoidRootPart.CFrame = plr2.HumanoidRootPart.CFrame
+end, function()
+	print("Changed Keybind")
+end)
+section31:addButton("--------------#1------------", function()
+	print("-----------")
+end)
+section31:addTextbox("Item:", "Change it", function(value, focusLost)
+	print("Input", value)
+
+	if focusLost then
+	    BSS = value
+	end
+end)
+section31:addKeybind("Equip selected item: ", Enum.KeyCode.M, function()
+	print("Activated Keybind")
+	local Event = game:GetService("ReplicatedStorage").RemoteEvents.Equip
+    Event:FireServer(BSS)
+end, function()
+	print("Changed Keybind")
+end)
+section31:addKeybind("Unequip selected item: ", Enum.KeyCode.M, function()
+	print("Activated Keybind")
+	local Event = game:GetService("ReplicatedStorage").RemoteEvents.Unequip
+    Event:FireServer(BSS)
+end, function()
+	print("Changed Keybind")
+end)
+section31:addButton("-------------#2-------------", function()
+	print("-----------")
+end)
+
+section31:addTextbox("Item:", "Change it", function(value, focusLost)
+	print("Input", value)
+
+	if focusLost then
+	    BSV = value
+	end
+end)
+section31:addKeybind("Equip selected item: ", Enum.KeyCode.M, function()
+	print("Activated Keybind")
+	local Event = game:GetService("ReplicatedStorage").RemoteEvents.Equip
+    Event:FireServer(BSV)
+end, function()
+	print("Changed Keybind")
+end)
+section31:addKeybind("Unequip selected item: ", Enum.KeyCode.M, function()
+	print("Activated Keybind")
+	local Event = game:GetService("ReplicatedStorage").RemoteEvents.Unequip
+    Event:FireServer(BSV)
+end, function()
+	print("Changed Keybind")
+end)
+section31:addButton("-------------#3------------", function()
+	print("-----------")
+end)
+section31:addTextbox("Item:", "Change it", function(value, focusLost)
+	print("Input", value)
+
+	if focusLost then
+	    BSG = value
+	end
+end)
+section31:addKeybind("Equip selected item: ", Enum.KeyCode.M, function()
+	print("Activated Keybind")
+	local Event = game:GetService("ReplicatedStorage").RemoteEvents.Equip
+    Event:FireServer(BSG)
+end, function()
+	print("Changed Keybind")
+end)
+section31:addKeybind("Unequip selected item: ", Enum.KeyCode.M, function()
+	print("Activated Keybind")
+	local Event = game:GetService("ReplicatedStorage").RemoteEvents.Unequip
+    Event:FireServer(BSG)
+end, function()
+	print("Changed Keybind")
+end)
